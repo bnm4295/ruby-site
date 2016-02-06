@@ -25,6 +25,11 @@
   <%= @person.color %>
 </p>
 
+<p>
+  <strong>Gender:</strong>
+  <%= @person.gender %>
+</p>
+
 <div style = "position: absolute;">
 <%= link_to 'Edit', edit_person_path(@person) %>
 <%= link_to 'Back', people_path %>

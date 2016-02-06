@@ -1,6 +1,7 @@
 <h1>Listing people</h1>
 <head>
   <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
 </head>
 
 <table>
@@ -10,7 +11,8 @@
       <th>Weight</th>
       <th>Height</th>
       <th>Color</th>
-      <th colspan="3">Actions</th>
+      <th>Gender</th>
+      <th colspan="4">Actions</th>
     </tr>
   </thead>
 
@@ -21,10 +23,11 @@
         <td><%= person.weight %></td>
         <td><%= person.height %></td>
         <td><%= person.color %></td>
+        <td><%= person.gender %></td>
 
         <td><%= link_to 'Show', person %></td>
         <td><%= link_to 'Edit', edit_person_path(person) %></td>
-        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: {} %></td>
       </tr>
     <% end %>
   </tbody>
@@ -33,6 +36,7 @@
 
 <div class = "container">
 <% @people.each do |person| %>
+
   <div style=
   "background-color: <%= person.color %>;
   position: relative
@@ -43,16 +47,26 @@
   width: <%= person.weight + 'px'%>;
   height: <%= person.height + 'px'%>;
   ">
-    <div class = "names">
+    <div id = "names">
       <%= person.name %>
     </div>
   </div>
+
+  <script type = "text/javascript">
+    var gender = "<%= person.gender %>";
+    if(gender == "male"){
+      alert("<%= person.name %> is a male");
+    }
+    else{
+      alert("<%= person.name %> is a female");
+    }
+  </script>
 <% end %>
 </div>
 
 <style>
-  .names{
-    color: White;
+  #names{
+    color: white;
   }
   .container{
     position: absolute;

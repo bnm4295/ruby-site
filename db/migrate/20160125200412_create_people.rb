@@ -5,6 +5,7 @@ class CreatePeople < ActiveRecord::Migration
       t.string :weight
       t.string :height
       t.string :color
+      t.string :gender
 
       t.timestamps
     end

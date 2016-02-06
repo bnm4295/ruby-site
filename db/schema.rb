@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20160125200412) do
     t.string   "weight"
     t.string   "height"
     t.string   "color"
+    t.string   "gender"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

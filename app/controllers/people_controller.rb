@@ -1,5 +1,4 @@
 class PeopleController < ApplicationController
-  #link_to function
   before_action :set_person, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -50,7 +49,7 @@ class PeopleController < ApplicationController
     end
 
     def person_params
-      params.require(:person).permit(:name, :weight, :height, :color)
+      params.require(:person).permit(:name, :weight, :height, :color, :gender)
     end
 
 

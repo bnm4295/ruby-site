@@ -1,0 +1,48 @@
+<p id="notice"><%= notice %></p>
+
+<head>
+   <%= stylesheet_link_tag "application" %>
+</head>
+
+<body>
+<p>
+  <strong>Name:</strong>
+  <%= @person.name %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @person.weight %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @person.height %>
+</p>
+
+<p>
+  <strong>Color:</strong>
+  <%= @person.color %>
+</p>
+
+<div style = "position: absolute;">
+<%= link_to 'Edit', edit_person_path(@person) %>
+<%= link_to 'Back', people_path %>
+</div>
+
+<div class= "form-background">
+</div>
+<style>
+  .form-background{
+  position: relative;
+  top: 100px;
+  float: center;
+  width: <%= @person.weight + 'px'%>;
+  height: <%= @person.height + 'px'%>;
+  padding: 0;
+  margin: 0 auto;
+  background-color: <%= @person.color %>;
+  }
+</style>
+
+</body>

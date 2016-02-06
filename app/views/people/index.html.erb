@@ -1,0 +1,62 @@
+<h1>Listing people</h1>
+<head>
+  <%= stylesheet_link_tag "application" %>
+</head>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Weight</th>
+      <th>Height</th>
+      <th>Color</th>
+      <th colspan="3">Actions</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @people.each do |person| %>
+      <tr>
+        <td><%= person.name %></td>
+        <td><%= person.weight %></td>
+        <td><%= person.height %></td>
+        <td><%= person.color %></td>
+
+        <td><%= link_to 'Show', person %></td>
+        <td><%= link_to 'Edit', edit_person_path(person) %></td>
+        <td><%= link_to 'Destroy', person, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= link_to 'New Person', new_person_path %>
+
+<div class = "container">
+<% @people.each do |person| %>
+  <div style=
+  "background-color: <%= person.color %>;
+  position: relative
+  padding: 0;
+  top: 10px;
+  float: left;
+  margin: 10px;
+  width: <%= person.weight + 'px'%>;
+  height: <%= person.height + 'px'%>;
+  ">
+    <div class = "names">
+      <%= person.name %>
+    </div>
+  </div>
+<% end %>
+</div>
+
+<style>
+  .names{
+    color: White;
+  }
+  .container{
+    position: absolute;
+    bottom: 0;
+    padding: 20px;
+  }
+</style>

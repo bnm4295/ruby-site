@@ -11,9 +11,9 @@ default: &default
 
 development:
   <<: *default
-  database: d37a7ado0heplr
-  username: nkgzfzvpxkohqm
-  password: JZ0Xn4_N5h1Kxp1s5CMj6BLDB1
+  database: assignment2_development
+  username: jhso
+  password: cmpt4295
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
